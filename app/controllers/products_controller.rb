@@ -22,6 +22,15 @@ class ProductsController < ApplicationController
       render :new
     end
   end
+  
+  def destroy
+
+    @product = Product.destroy(params[:id])
+    respond_to do |format|
+      format.html { redirect_to product_path() }
+      format.js
+    end
+  end
 
   private
   def product_params

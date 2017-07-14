@@ -7,13 +7,16 @@ class ProductsController < ApplicationController
   end
 
   def new
-    @product = Product.new
+    @product = Product.new()
   end
 
   def create
     @product = Product.new(product_params)
     if @product.save
-      redirect_to '/'
+      respond_to do |f|
+        f.html {redirect_to '/'}
+        f.js
+      end
     else
       render :new
     end

@@ -1,9 +1,10 @@
 <h1>Add a product.</h1>
 
-  <%= form_for @product, id: 'new_product' remote: true do |f| %>
+  <%= form_for @product, id: 'new_product', remote: true do |f| %>
     Name: <%= f.text_field :name %>
     Description: <%= f.text_field :description %>
     Password: <%= f.number_field :price %>
   <%= f.submit "Submit" %>
 
 <% end %>
+ 

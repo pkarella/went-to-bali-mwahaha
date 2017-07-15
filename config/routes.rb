@@ -14,5 +14,5 @@ Rails.application.routes.draw do
   resource :cart, only: [:show]
 
   get 'finalize' => 'carts#finalize'
-
+get '/admin' => 'admins#home'
 end

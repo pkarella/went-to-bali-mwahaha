@@ -1,10 +1,12 @@
-<h1>Add a product.</h1>
+<%= render 'layouts/errors', :object => @product %>
 
-  <%= form_for @product, id: 'new_product', remote: true do |f| %>
-    Name: <%= f.text_field :name %>
-    Description: <%= f.text_field :description %>
-    Password: <%= f.number_field :price %>
-  <%= f.submit "Submit" %>
-
+<%= form_for @product, html: { multipart: true } do |f| %>
+  Name: <%= f.text_field :name %>
+  Description: <%= f.text_field :description %>
+  Price: <%= f.number_field :price, step: 0.01 %>
+  Image:
+  <br><br>
+  <%= f.file_field :image %>
+  <br><br>
+  <%= f.submit "Submit", class: 'btn' %>
 <% end %>
- 

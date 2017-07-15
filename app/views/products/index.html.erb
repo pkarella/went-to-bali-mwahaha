@@ -1,25 +1,22 @@
 <h3>Products</h3>
 
 <div class="row">
-  <div class="col s4">
-  <div class="well">
-  <% @products.each do |product| %>
-      <h4><%= product.name %></h4>
-      <p><%= product.description %></p>
-      <p><%= number_to_currency product.price %></p>
+  <div class="section">
+    <% @products.each do |product| %>
+      <div class="col s4">
+        <h4><%= link_to product.name, product_path(product), remote: true %></h4>
+        <p><%= number_to_currency product.price %></p>
+        <div class='product_details' id='product_details_<%= product.id %>'>
+          <p><%= product.description %></p>
 
-      <%= form_for @order_item do |f| %>
-        <%= f.hidden_field :product_id, value: product.id %>
-        <%= f.number_field :quantity, placeholder: "Oops, breaks if you don't add input!" %>
-      <% end %>
-  <p><%= link_to "Add a Product", new_product_path(), id: "new_link", remote: true %></p>
-    </div>
-
-
-  <% end %>
-
-</div>
-</div>
-<div id="test">
-
+        
+        </div>
+        <%= form_for @order_item, id: 'add_to_cart_form', remote: true do |f| %>
+          <%= f.hidden_field :product_id, value: product.id %>
+          <%= f.number_field :quantity, placeholder: "Oops, breaks if you don't add input!", class: "add_to_cart_field" %>
+          <span class="waves-effect waves-light btn"><%= f.submit "Add to cart" %></span>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
 </div>

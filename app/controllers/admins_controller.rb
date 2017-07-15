@@ -1,7 +1,7 @@
 class AdminsController < ApplicationController
-  before_action :authorize
 
-  def home
+
+  def welcome
     @products = Product.all
   end
 

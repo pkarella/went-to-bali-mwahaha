@@ -1,1 +1,3 @@
 <h2>Thanks, you paid <strong>$5.00</strong>!</h2>
+<p id='cart_total'>Your Total: <%= number_to_currency current_order.total_price %></p>
+<p><%= link_to "Complete Transaction", finalize_path %></p>

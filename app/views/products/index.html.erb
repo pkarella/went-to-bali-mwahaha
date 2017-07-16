@@ -1,13 +1,13 @@
 <h3>Products</h3>
-<div class="well">
 <div class="row">
-
+  <div class="col-md-4">
     <% @products.each do |product| %>
       <div class="col s4">
         <h4><%= link_to product.name, product_path(product)%></h4>
         <p><%= number_to_currency product.price %></p>
         <div class='product_details' id='product_details_<%= product.id %>'>
           <p><%= product.description %></p>
+          
 
 
         </div>
@@ -18,5 +18,5 @@
         <% end %>
       </div>
     <% end %>
+    </div>
   </div>
-</div>

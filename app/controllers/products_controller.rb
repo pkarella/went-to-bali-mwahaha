@@ -8,11 +8,6 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
-
-    respond_to do |format|
-      format.html
-      format.js
-    end
   end
 
   def new
@@ -49,6 +44,6 @@ class ProductsController < ApplicationController
 
   private
   def product_params
-    params.require(:product).permit(:name, :description, :price, :image)
+    params.require(:product).permit(:name, :description, :price, :image )
   end
 end

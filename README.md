@@ -21,7 +21,7 @@ Refactoring ecommerce site to add admin page. The admin is able to add projects,
   * _Added Admin page to allow admins to create,update and delete       products_
   * _Used Paperclip gem to add image attachment attribute to Product_
   * _Add all flash messages when creating,updating, and deleting information_
-
+  * _Add stripe payment api_
 
 ## Setup/Installation Requirements
 

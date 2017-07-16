@@ -13,6 +13,34 @@
   <p>Your shopping cart is empty.</p>
 <% end %>
 
+
+<%= form_tag charges_path do %>
+  <article>
+    <% if flash[:error].present? %>
+      <div id="error_explanation">
+        <p><%= flash[:error] %></p>
+      </div>
+    <% end %>
+    <label class="amount">
+      <span><%= number_to_currency current_order.total_price %></span>
+    </label>
+  </article>
+
+  <% if @order_items.any? %>
+    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+            data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+            data-description="Your order:"
+            data-amount= <%= current_order.total_price * 100 %>
+            data-locale="auto"></script>
+  <% end %>
+<% end %>
+
+
+
+
+
+
+
 <% if @previous_orders %>
   <h3>Your order history:</h3>
   <% @previous_orders.each do |order| %>

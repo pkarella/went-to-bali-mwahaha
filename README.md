@@ -22,7 +22,7 @@ Refactoring ecommerce site to add admin page. The admin is able to add projects,
   * _Used Paperclip gem to add image attachment attribute to Product_
   * _Add all flash messages when creating,updating, and deleting information_
   * _Add stripe payment api_
-
+  * _User cannot order negative numbers_
 ## Setup/Installation Requirements
 
 * _Clone the repository: "git clone https://github.com/pkarella/went-to-bali-mwahaha.git"_

@@ -1,7 +1,39 @@
-<h3> <%= @product.name %></h3>
 
-<h5><%= @product.price %></h5>
+<!-- <div class="col s12 m7">
+    <h2 class="header">  <%= @product.name %></h2>
+    <div class="card horizontal">
+      <div class="card-image">
+        <h2><%= image_tag('monkey.jpg') %></h2>
+      </div>
+      <div class="card-stacked">
+        <div class="card-content">
+          <h3> <%= @product.name %></h3>
+          <h5><%= @product.price %></h5>
+          <p><%= @product.description %></p>
+        </div>
+        <div class="card-action">
+          <%= link_to 'Return to Products', products_path %>
+        </div>
+      </div>
+    </div>
+  </div> -->
 
-<p><%= @product.description %></p>
 
-<h2><%= image_tag(@product.image) %></h2>
+
+
+  <div class="card">
+      <div class="card-image waves-effect waves-block waves-light">
+        <div class="card-image">
+          <img class="activator" src=""><%= image_tag('monkey.jpg') %>
+        </div>
+      </div>
+      <div class="card-content">
+        <span class="card-title activator grey-text text-darken-4"><h3> <%= @product.name %></h3><i class="material-icons right">Click Here to see </i></span>
+        <%= link_to 'Return to Products', products_path %>
+      </div>
+      <div class="card-reveal">
+        <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+        <h5><%= @product.price %></h5>
+        <p><%= @product.description %></p>
+      </div>
+    </div>
